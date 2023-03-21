@@ -64,7 +64,7 @@ parts:
       
     override-pull: |
       craftctl default
-      craftctl set version=$(git describe --tags)
+      craftctl set version=$(git describe --tags --abbrev=0)
       
    
    
