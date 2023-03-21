@@ -69,7 +69,13 @@ parts:
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
       
-   
+    stage-packages:  
+      - libmpv1
+      - libavcodec-extra
+      - libflite1
+      - libavfilter-extra
+      - mpv
+     
    
   
   
