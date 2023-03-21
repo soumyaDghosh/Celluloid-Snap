@@ -13,8 +13,13 @@ architectures:
     build-for: amd64
     
     
-    
-                
+slots:
+  celluloid-snap:
+    interface: dbus
+    bus: session
+    name: io.github.CapeCrusader321.celluloid
+ 
+                  
 apps:
   celluloid-snap:
     command: usr/bin/celluloid
