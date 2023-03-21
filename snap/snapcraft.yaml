@@ -74,7 +74,28 @@ parts:
       - libavcodec-extra
       - libflite1
       - libavfilter-extra
-      - mpv
+      - libblas3
+      - ocl-icd-libopencl1
+      - libsdl2-2.0-0
+      - libxss1
+      - libxv1
+      - libaom3
+      - libavdevice58
+      - libavformat-extra
+      - libavutil56
+      - libbluray2
+      - libbs2b0
+      - libcdio19
+      - libcdio-cdda2
+      - libcdio-paranoia2
+      - libchromaprint1
+      - libcodec2-1.0
+      - libdav1d5
+      - libdc1394-25
+      - libdecor-0-0
+      - libdvdnav4
+      - libdvdread8
+      - 
      
    
   
