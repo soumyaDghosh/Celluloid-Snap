@@ -12,6 +12,9 @@ architectures:
   - build-on: amd64
     build-for: amd64
     
+layout:
+  /usr/local/bin/celluloid:
+    symlink: $SNAP/usr/local/bin/celluloid
     
 slots:
   celluloid-snap:
