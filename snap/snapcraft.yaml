@@ -1,9 +1,9 @@
 name: celluloid-snap
 base: core22
 adopt-info: celluloid-snap
-summary: Celluloid (formerly GNOME MPV) is a simple GTK+ frontend for mpv. It aims to be easy to use while maintaining high level of configurability. 
+summary: Simple GTK+ Frontend to MPV.
 description: |
-  Simple Libadwaita frontend to MPV.
+  Celluloid (formerly GNOME MPV) is a simple GTK+ frontend for mpv. It aims to be easy to use while maintaining high level of configurability. 
 grade: stable
 confinement: strict
 compression: lzo
