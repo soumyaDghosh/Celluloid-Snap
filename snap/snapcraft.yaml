@@ -66,12 +66,7 @@ parts:
       craftctl default
       craftctl set version=$(git describe --tags)
       
-    stage-packages:
-      - libopencl-clang13
-      - libsdl2-2.0-0
-      - libxss1
-      
-    
+   
    
   
   
