@@ -57,7 +57,8 @@ parts:
       - libgtk-4-dev
       - libc6
       - libglib2.0-0
-      - libmpv2
+      - libmpv1
+      - libmpv-dev
       - git
       
       
