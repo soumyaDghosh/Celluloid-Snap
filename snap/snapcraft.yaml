@@ -68,7 +68,7 @@ parts:
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
-      
+      curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.24/celluloid-0.24.tar.xz
     stage-packages:  
       - libmpv1
       - libavcodec-extra
