@@ -59,6 +59,7 @@ parts:
       - libgtk-4-common
       - libgtk-4-dev
       - libc6
+      - mpv
       - libglib2.0-0
       - libmpv1
       - libmpv-dev
