@@ -97,6 +97,8 @@ parts:
       - libdvdnav4
       - libdvdread8
       - libsmbclient
+      - samba
+     
     
      
      
