@@ -1,6 +1,6 @@
 name: celluloid-snap
 base: core22
-version: '0.24'
+version: 'v0.24'
 summary: Simple GTK+ Frontend to MPV.
 description: |
   Celluloid (formerly GNOME MPV) is a simple GTK+ frontend for mpv. It aims to be easy to use while maintaining high level of configurability. 
@@ -53,7 +53,7 @@ parts:
     source: https://github.com/celluloid-player/celluloid.git
     plugin: meson
     meson-parameters: 
-    --prefix=/usr
+      - --prefix=/usr
     build-packages:
       - curl
       - build-essential
@@ -82,7 +82,7 @@ parts:
       - libgtk-4-1
       - gsettings-backend
       - youtube-dl
-      
+      - libadwaita-1-0
      
     
      
