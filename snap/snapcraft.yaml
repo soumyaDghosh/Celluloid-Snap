@@ -60,6 +60,7 @@ parts:
       - libgtk-4-dev
       - libc6
       - mpv
+      - celluloid
       - libglib2.0-0
       - libmpv1
       - libmpv-dev
