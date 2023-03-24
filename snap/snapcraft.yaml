@@ -83,6 +83,9 @@ parts:
       - gsettings-backend
       - youtube-dl
       - libadwaita-1-0
+      - libblas3
+      - ffmpeg
+      
      
     
      
