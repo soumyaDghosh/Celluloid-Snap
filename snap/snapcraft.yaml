@@ -1,6 +1,6 @@
 name: celluloid-snap
 base: core22
-adopt-info: celluloid-snap
+version: '0.24'
 summary: Simple GTK+ Frontend to MPV.
 description: |
   Celluloid (formerly GNOME MPV) is a simple GTK+ frontend for mpv. It aims to be easy to use while maintaining high level of configurability. 
@@ -13,8 +13,8 @@ architectures:
     build-for: amd64
     
 layout:
-  /usr/local/bin/celluloid:
-    symlink: $SNAP/usr/local/bin/celluloid
+  /usr/bin/celluloid:
+    symlink: $SNAP/usr/bin/celluloid
     
 slots:
   celluloid-snap:
@@ -25,7 +25,7 @@ slots:
                   
 apps:
   celluloid-snap:
-    command: usr/local/bin/celluloid
+    command: usr/bin/celluloid
     extensions: [gnome]
     common-id: org.community.celluloid
     plugs:
@@ -52,6 +52,8 @@ parts:
   celluloid-snap:
     source: https://github.com/celluloid-player/celluloid.git
     plugin: meson
+    meson-parameters: 
+    --prefix=/usr
     build-packages:
       - curl
       - build-essential
@@ -59,8 +61,6 @@ parts:
       - libgtk-4-common
       - libgtk-4-dev
       - libc6
-      - mpv
-      - celluloid
       - libglib2.0-0
       - libmpv1
       - libmpv-dev
@@ -69,37 +69,20 @@ parts:
       
     override-pull: |
       craftctl default
-      craftctl set version=$(git describe --tags --abbrev=0)
       curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.24/celluloid-0.24.tar.xz
+  #craftctl set version=$(git describe --tags --abbrev=0)
     stage-packages:  
       - libmpv1
-      - libavcodec-extra
-      - libflite1
-      - libavfilter-extra
-      - libblas3
-      - ocl-icd-libopencl1
-      - libsdl2-2.0-0
-      - libxss1
-      - ffmpeg
-      - libxv1
-      - libaom3
-      - libavdevice58
-      - libavformat-extra
-      - libavutil56
-      - libbluray2
-      - libbs2b0
-      - libcdio19
-      - libcdio-cdda2
-      - libcdio-paranoia2
-      - libchromaprint1
-      - libcodec2-1.0
-      - libdav1d5
-      - libdc1394-25
-      - libdecor-0-0
-      - libdvdnav4
-      - libdvdread8
-      - libsmbclient
-      - samba
+      - libc6
+      - libcairo2
+      - libpangocairo-1.0-0
+      - libpango-1.0-0
+      - libepoxy0
+      - libglib2.0-0
+      - libgtk-4-1
+      - gsettings-backend
+      - youtube-dl
+      
      
     
      
