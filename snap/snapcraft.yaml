@@ -93,7 +93,9 @@ parts:
       - luajit
       - libffmpeg-nvenc-dev
       
-      
+    override-prime: |
+      craftctl default
+      /sbin/ldconfig -v
      
     
      
