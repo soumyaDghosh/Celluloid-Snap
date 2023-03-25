@@ -87,6 +87,8 @@ parts:
       - libv4l2rds0
       - libv4lconvert0
       - libass9
+      - libblas-dev
+      - libblas3
       - uchardet
       - libatlas-base-dev
       - libuchardet0
