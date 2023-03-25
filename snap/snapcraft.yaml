@@ -20,9 +20,7 @@ slots:
     name: io.github.CapeCrusader321.celluloid
     
 
-layout:
-  /usr/local/bin/celluloid:
-    symlink: $SNAP/usr/local/bin/celluloid
+
                   
 apps:
   celluloid-snap:
