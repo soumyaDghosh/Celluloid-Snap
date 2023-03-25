@@ -57,22 +57,30 @@ parts:
     build-packages:
       - curl
       - build-essential
+      - libmpv-dev
+      - appstream-util
+      - autoconf-archive
+      - libepoxy-dev
+      - libgtk-4-dev
+      - pkg-config
+      - python3
+      
+      
+    override-pull: |
+      craftctl default
+      curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.24/celluloid-0.24.tar.xz
+  #craftctl set version=$(git describe --tags --abbrev=0)
+    stage-packages:  
       - libgtk-4-1
       - libgtk-4-common
-      - libgtk-4-dev
-      - libc6
+   #- libc6
       - libglib2.0-0
-      - libmpv1
-      - libmpv-dev
-      - libc6
       - libcairo2
       - libpangocairo-1.0-0
       - libpango-1.0-0
       - libepoxy0
       - gsettings-backend
       - youtube-dl
-      - libadwaita-1-0
-      - libblas3
       - ffmpeg
       - libv4l-0
       - libv4l2rds0
@@ -84,12 +92,6 @@ parts:
       - libffmpeg-nvenc-dev
       
       
-      
-    override-pull: |
-      craftctl default
-      curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.24/celluloid-0.24.tar.xz
-  #craftctl set version=$(git describe --tags --abbrev=0)
-    
      
     
      
