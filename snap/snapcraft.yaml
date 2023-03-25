@@ -88,7 +88,7 @@ parts:
       - libv4lconvert0
       - libass9
       - uchardet
-      - libblas64-3
+      - libatlas-base-dev
       - libuchardet0
       - luajit
       - libffmpeg-nvenc-dev
