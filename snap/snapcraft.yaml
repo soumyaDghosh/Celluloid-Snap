@@ -75,6 +75,7 @@ parts:
       - libgtk-4-common
    #- libc6
       - libglib2.0-0
+      - libmpv2
       - libcairo2
       - libpangocairo-1.0-0
       - libpango-1.0-0
