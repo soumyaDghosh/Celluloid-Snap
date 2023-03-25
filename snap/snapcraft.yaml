@@ -18,11 +18,15 @@ slots:
     interface: dbus
     bus: session
     name: io.github.CapeCrusader321.celluloid
- 
+    
+
+layout:
+  /usr/local/bin/celluloid:
+    symlink: $SNAP/usr/local/bin/celluloid
                   
 apps:
   celluloid-snap:
-    command: usr/bin/celluloid
+    command: usr/local/bin/celluloid
     extensions: [gnome]
     common-id: org.community.celluloid
     plugs:
@@ -49,8 +53,6 @@ parts:
   celluloid-snap:
     source: https://github.com/celluloid-player/celluloid.git
     plugin: meson
-    meson-parameters: 
-      - --prefix=/usr
     build-packages:
       - curl
       - build-essential
