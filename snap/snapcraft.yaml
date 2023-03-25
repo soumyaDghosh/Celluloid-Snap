@@ -12,9 +12,6 @@ architectures:
   - build-on: amd64
     build-for: amd64
     
-layout:
-  /usr/bin/celluloid:
-    symlink: $SNAP/usr/lib/x86_64-linux-gnu/blas
     
 slots:
   celluloid-snap:
@@ -53,7 +50,7 @@ parts:
     source: https://github.com/celluloid-player/celluloid.git
     plugin: meson
     meson-parameters: 
-      - --prefix=/usr
+      - --prefix=/snap/celluloid-snap/current/usr/bin
     build-packages:
       - curl
       - build-essential
@@ -73,7 +70,6 @@ parts:
     stage-packages:  
       - libgtk-4-1
       - libgtk-4-common
-   #- libc6
       - libglib2.0-0
       - libmpv1
       - libcairo2
@@ -90,15 +86,11 @@ parts:
       - libblas-dev
       - libblas3
       - uchardet
-      - libatlas-base-dev
       - libuchardet0
       - luajit
       - libffmpeg-nvenc-dev
       
-    override-prime: |
-      craftctl default
-      /sbin/ldconfig -v
-     
+   
     
      
      
