@@ -64,28 +64,32 @@ parts:
       - libglib2.0-0
       - libmpv1
       - libmpv-dev
-      - git
+      - libc6
+      - libcairo2
+      - libpangocairo-1.0-0
+      - libpango-1.0-0
+      - libepoxy0
+      - gsettings-backend
+      - youtube-dl
+      - libadwaita-1-0
+      - libblas3
+      - ffmpeg
+      - libv4l-0
+      - libv4l2rds0
+      - libv4lconvert0
+      - libass9
+      - uchardet
+      - libuchardet0
+      - luajit
+      - libffmpeg-nvenc-dev
+      
       
       
     override-pull: |
       craftctl default
       curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.24/celluloid-0.24.tar.xz
   #craftctl set version=$(git describe --tags --abbrev=0)
-    stage-packages:  
-      - libmpv1
-      - libc6
-      - libcairo2
-      - libpangocairo-1.0-0
-      - libpango-1.0-0
-      - libepoxy0
-      - libglib2.0-0
-      - libgtk-4-1
-      - gsettings-backend
-      - youtube-dl
-      - libadwaita-1-0
-      - libblas3
-      - ffmpeg
-      
+    
      
     
      
