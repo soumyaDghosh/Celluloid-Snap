@@ -14,7 +14,7 @@ architectures:
     
 layout:
   /usr/bin/celluloid:
-    symlink: $SNAP/usr/bin/celluloid
+    symlink: $SNAP/usr
     
 slots:
   celluloid-snap:
