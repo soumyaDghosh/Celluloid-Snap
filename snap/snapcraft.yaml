@@ -50,7 +50,7 @@ parts:
     source: https://github.com/celluloid-player/celluloid.git
     plugin: meson
     meson-parameters: 
-      - --prefix=/snap/celluloid-snap/current/usr/bin
+      - --prefix=/usr
     build-packages:
       - curl
       - build-essential
