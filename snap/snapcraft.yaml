@@ -27,6 +27,8 @@ layout:
 apps:
   celluloid-snap:
     command: usr/local/bin/celluloid
+    environment:
+      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/x86_64-linux-gnu/blas
     extensions: [gnome]
     common-id: org.community.celluloid
     plugs:
