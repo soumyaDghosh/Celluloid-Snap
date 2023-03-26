@@ -97,10 +97,11 @@ parts:
     stage-packages:
       - libblas-dev
       - libblas3
+      - liblapack3
     prime:
       - usr/lib/*/libblas3* 
       - usr/lib/*/libblas-dev*
-    
+      - usr/lib/*/liblapack3*
      
     
   
