@@ -63,6 +63,7 @@ parts:
       - libgtk-4-dev
       - pkg-config
       - python3
+      - luajit
       
       
     override-pull: |
@@ -85,17 +86,20 @@ parts:
       - libv4l2rds0
       - libv4lconvert0
       - libass9
-      - libblas-dev
-      - libblas3
       - uchardet
       - libuchardet0
-      - luajit
       - libffmpeg-nvenc-dev
       
-   
+  libraries:
+    plugin: nil
+    stage-packages:
+      - libblas-dev
+      - libblas3
+    prime:
+      - usr/lib/*/libblas3* 
+      - usr/lib/*/libblas-dev*
     
      
-     
-   
+    
   
   
