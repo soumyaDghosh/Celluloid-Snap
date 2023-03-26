@@ -19,15 +19,15 @@ slots:
     bus: session
     name: io.github.CapeCrusader321.celluloid
     
-
+layout:
+  /usr/local/bin/celluloid:
+    symlink: $SNAP/usr/lib/x86_64-linux-gnu 
 
                   
 apps:
   celluloid-snap:
     command: usr/local/bin/celluloid
     extensions: [gnome]
-    environment:
-      LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/x86_64-linux-gnu/blas"
     common-id: org.community.celluloid
     plugs:
       - home
