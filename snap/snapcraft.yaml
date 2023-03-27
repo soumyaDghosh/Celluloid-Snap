@@ -17,7 +17,7 @@ slots:
   celluloid-snap:
     interface: dbus
     bus: session
-    name: io.github.CapeCrusader321.celluloid
+    name: io.github.celluloid_player.Celluloid
     
 layout:
   /usr/local/bin/celluloid:
