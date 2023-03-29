@@ -21,7 +21,7 @@ slots:
     
 layout:
   /usr/local/bin/celluloid:
-    symlink: $SNAP/usr/local/bin/celluloid
+    symlink: $SNAP/usr
 
                   
 apps:
