@@ -12,9 +12,6 @@ architectures:
   - build-on: amd64
     build-for: amd64
     
-layout:
-  /usr/local/bin/celluloid:
-     symlink: $SNAP/usr/local/bin/celluloid
     
 slots:
   celluloid-snap:
@@ -25,7 +22,7 @@ slots:
 
 apps:
   celluloid-snap:
-    command: usr/local/bin/celluloid
+    command: usr/bin/celluloid
     environment:
       LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
     extensions: [gnome]
@@ -54,6 +51,8 @@ parts:
   celluloid-snap:
     source: https://github.com/celluloid-player/celluloid.git
     plugin: meson
+    meson-parameters:
+      - --prefix=/usr
     build-packages:
       - curl
       - build-essential
