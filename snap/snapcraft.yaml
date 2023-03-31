@@ -19,6 +19,9 @@ slots:
     bus: session
     name: io.github.celluloid_player.Celluloid
     
+  mpris:
+    interface: mpris
+    name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid   
 
 apps:
   celluloid-snap:
@@ -38,11 +41,16 @@ apps:
       - network
       - network-bind
       - raw-usb
+      - process-control
+      - hostname-control
       - optical-drive
       - network-status
       - removable-media
       - unity7
       - screen-inhibit-control
+    slots:
+      - mpris
+      
       
  
  
