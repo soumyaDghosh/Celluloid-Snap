@@ -56,8 +56,7 @@ parts:
    source: https://github.com/mpv-player/mpv.git
    meson-parameters:
     - --prefix=/usr 
-  
-  
+    
   libadwaita:
     plugin: meson
     source: https://gitlab.gnome.org/GNOME/libadwaita/-/archive/1.2.0/libadwaita-1.2.0.tar.bz2
