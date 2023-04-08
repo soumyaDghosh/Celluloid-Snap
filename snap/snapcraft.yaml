@@ -98,7 +98,6 @@ parts:
       curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.25/celluloid-0.25.tar.xz
   #craftctl set version=$(git describe --tags --abbrev=0)
     stage-packages:  
-      - libmpv1
       - libv4l-0
       - libv4l2rds0
       - libv4lconvert0
