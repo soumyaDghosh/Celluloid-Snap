@@ -92,7 +92,6 @@ parts:
       - python3
       - luajit
       
-      
     override-pull: |
       craftctl default
       curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.25/celluloid-0.25.tar.xz
