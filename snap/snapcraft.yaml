@@ -27,6 +27,7 @@ apps:
   celluloid-snap:
     command: usr/bin/celluloid
     environment:
+      TMPDIR: $XDG_RUNTIME_DIR
       LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
     extensions: [gnome]
     common-id: org.community.celluloid
