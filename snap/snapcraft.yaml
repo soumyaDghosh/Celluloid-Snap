@@ -55,8 +55,19 @@ parts:
    plugin: meson
    source: https://github.com/mpv-player/mpv.git
    meson-parameters:
-    - --prefix=/usr 
-    
+      - -Dprefix=/usr
+      - -Dbuildtype=release
+      - -Dbuild-date=false
+      
+   build-poackages:
+    - pkg-config
+    - libavfilter-dev
+    - libass-dev
+    - libxkbcommon-dev
+    - libva-dev
+    - liblua5.2-dev
+      
+        
   libadwaita:
     plugin: meson
     source: https://gitlab.gnome.org/GNOME/libadwaita/-/archive/1.2.0/libadwaita-1.2.0.tar.bz2
