@@ -64,8 +64,10 @@ parts:
     - libxkbcommon-dev
     - libva-dev
     - liblua5.2-dev
-      
-        
+    
+   stage-packages:   
+    - liblua5.2-0 
+    
   libadwaita:
     plugin: meson
     source: https://gitlab.gnome.org/GNOME/libadwaita/-/archive/1.2.0/libadwaita-1.2.0.tar.bz2
