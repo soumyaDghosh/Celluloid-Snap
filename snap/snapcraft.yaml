@@ -12,13 +12,15 @@ architectures:
     build-for: amd64
     
 slots:
-  celluloid-snap:
-    interface: dbus
-    bus: session
-    name: io.github.celluloid_player.Celluloid
   mpris:
     interface: mpris
     name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid   
+plugs:
+  celluloid-dbus:
+    interface: dbus
+    bus: session
+    name: io.github.celluloid_player.Celluloid
+
 
 apps:
   celluloid-snap:
@@ -38,6 +40,7 @@ apps:
       - network
       - network-bind
       - raw-usb
+      - celluloid-dbus
       - process-control
       - hostname-control
       - optical-drive
