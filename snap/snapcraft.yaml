@@ -28,7 +28,6 @@ apps:
       LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
     extensions: [gnome]
     common-id: org.community.celluloid
-    desktop: usr/share/applications/io.github.celluloid_player.Celluloid.desktop
     plugs:
       - home
       - audio-playback
