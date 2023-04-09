@@ -51,11 +51,12 @@ apps:
 parts:
   mpv:
    plugin: meson
-   source: https://github.com/mpv-player/mpv.git
+   source: https://github.com/mpv-player/mpv/archive/refs/tags/v0.35.1.tar.gz
    meson-parameters:
       - -Dprefix=/usr
       - -Dbuildtype=release
       - -Dbuild-date=false
+      - -Dlibmpv=true
       
    build-packages:
     - pkg-config
