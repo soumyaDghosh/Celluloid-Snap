@@ -14,7 +14,8 @@ architectures:
 slots:
   mpris:
     interface: mpris
-    name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid   
+    name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid
+    
 plugs:
   celluloid-dbus:
     interface: dbus
