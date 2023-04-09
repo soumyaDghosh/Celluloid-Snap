@@ -16,9 +16,9 @@ slots:
     interface: dbus
     bus: session
     name: io.github.celluloid_player.Celluloid
-  #mpris:
-    #interface: mpris
-    #name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid   
+  mpris:
+    interface: mpris
+    name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid   
 
 apps:
   celluloid-snap:
@@ -78,7 +78,6 @@ parts:
       # WORKAROUND: Ignore compiler warning
       sed -e 's/-W\(format-nonliteral\)\b/-Wno-\1/g' -i meson.build
     meson-parameters:
-      # WORKAROUND: Must be installed to /usr because of GI search path
       - --prefix=/usr
       - -Dexamples=false
       - -Dtests=false
@@ -118,7 +117,6 @@ parts:
       - liblapack3
     
   yt-dlp:
-    # Missing optional dependencies atomicparsley, mpv, phantomjs and rtmpdump
     after: [ffmpeg]
     plugin: python
     source: https://github.com/yt-dlp/yt-dlp/releases/download/2023.03.04/yt-dlp.tar.gz
@@ -147,14 +145,10 @@ parts:
       - -pyvenv.cfg  
   
   ffmpeg:
-    # WORKAROUND:
-    # Build from source because the ffmpeg package installs libraries as dependencies
-    # that conflict with the Gnome extension
     plugin: autotools
     source: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
     source-checksum: sha256/57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082
     autotools-configure-parameters:
-      # WORKAROUND: Install to /usr instead of /usr/local because it's not in search paths
       - --prefix=/usr
       - --disable-debug
       - --disable-doc
