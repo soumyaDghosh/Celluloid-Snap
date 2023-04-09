@@ -57,7 +57,7 @@ parts:
       - -Dbuildtype=release
       - -Dbuild-date=false
       
-   build-poackages:
+   build-packages:
     - pkg-config
     - libavfilter-dev
     - libass-dev
