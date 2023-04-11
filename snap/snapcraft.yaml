@@ -127,6 +127,7 @@ parts:
     build-packages:
       - nasm
       - libgnutls28-dev
+      - libaom-dev
       - libmp3lame-dev
       - libvorbis-dev
     stage-packages:
