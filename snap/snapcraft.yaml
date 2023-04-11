@@ -97,7 +97,7 @@ parts:
     
   ffmpeg:
     plugin: autotools
-    source: https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
+    source: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
     autotools-configure-parameters:
       - --prefix=/usr
       - --disable-debug
