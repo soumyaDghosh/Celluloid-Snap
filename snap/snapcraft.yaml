@@ -115,56 +115,34 @@ parts:
       - libffmpeg-nvenc-dev
       - libblas3
       - liblapack3
-    
+      
   ffmpeg:
+    # WORKAROUND:
+    # Build from source because the ffmpeg package installs libraries as dependencies
+    # that conflict with the Gnome extension
     plugin: autotools
     source: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
+    source-checksum: sha256/57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082
     autotools-configure-parameters:
+      # WORKAROUND: Install to /usr instead of /usr/local because it's not in search paths
       - --prefix=/usr
       - --disable-debug
       - --disable-doc
       - --disable-static
       - --enable-gpl
-      - --enable-gnutls
       - --enable-shared
-      - --enable-ffplay
+      - --disable-ffplay
       - --disable-devices
       - --enable-gnutls
       - --enable-libmp3lame
       - --enable-libvorbis
-      - --enable-libaom
-      - --enable-libass
-      - --enable-libfdk-aac 
-      - --enable-libfreetype 
-      - --enable-libmp3lame 
-      - --enable-libopus 
-      - --enable-libsvtav1 
-      - --enable-libdav1d
-      - --enable-libvpx 
-      - --enable-libx264 
-      - --enable-libx265 
-      - --enable-nonfree
-        
     build-packages:
       - nasm
       - libgnutls28-dev
-      - libaom-dev
-      - libdav1d-dev
       - libmp3lame-dev
       - libvorbis-dev
-      - libass-dev 
-      - libfreetype6-dev
-      - libgnutls28-dev
-      - libmp3lame-dev
-      - libsdl2-dev
-      - libtool
-      - libva-dev
-      - libvdpau-dev
-      - libxcb1-dev 
-      - libxcb-shm0-dev 
-      - libxcb-xfixes0-dev
-      - zlib1g-dev
     stage-packages:
       - libmp3lame0
     stage:
-      - -usr/include
+      - -usr/include  
+ 
