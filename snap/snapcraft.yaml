@@ -150,6 +150,7 @@ parts:
       - nasm
       - libgnutls28-dev
       - libaom-dev
+      - libdav1d-dev
       - libmp3lame-dev
       - libvorbis-dev
       - libass-dev 
