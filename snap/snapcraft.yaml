@@ -112,7 +112,6 @@ parts:
       - libv4l2rds0
       - libv4lconvert0
       - libass9
-      - libmpv1
       - libffmpeg-nvenc-dev
       - libblas3
       - liblapack3
