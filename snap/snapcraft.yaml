@@ -131,7 +131,7 @@ parts:
       - --disable-static
       - --enable-gpl
       - --enable-shared
-      - --disable-ffplay
+      - --enable-ffplay
       - --disable-devices
       - --enable-gnutls
       - --enable-libmp3lame
