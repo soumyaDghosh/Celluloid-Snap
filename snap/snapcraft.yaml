@@ -110,8 +110,7 @@ parts:
       - --enable-libass 
       - --enable-libaom  
       - --enable-ladspa
-      - --enable-alsa 
-      - --enable-nvenc
+      - --enable-alsa
       - --enable-vdpau 
       - --enable-avformat  
       - --enable-swresample
