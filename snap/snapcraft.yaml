@@ -137,6 +137,7 @@ parts:
       - libxcb1-dev
       - libx264-dev
       - libopus-dev
+      - libaom-dev
       - libdav1d-dev
       - libvpx-dev
       - libx265-dev 
