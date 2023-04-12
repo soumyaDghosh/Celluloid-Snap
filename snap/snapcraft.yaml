@@ -43,26 +43,22 @@ apps:
    
 parts:  
   mpv:
-    source: https://github.com/mpv-player/mpv/archive/refs/tags/v0.35.1.tar.gz
+    source: https://github.com/mpv-player/mpv.git
     plugin: meson
     meson-parameters:
-      - -Dprefix=/usr
-      - -Dbuildtype=release
-      - -Dbuild-date=false
-      - -Dlua=enabled
-      - -Dpulse=enabled
-      - -Ddrm=enabled
+      - --prefix=/usr
+      - --buildtype=release
+      - -Dlibmpv=true
     build-packages:
-      - pkg-config
+      - curl
+      - libavcodec-dev
       - libavfilter-dev
       - libass-dev
-      - libpulse-dev
-      - libdrm-dev
-      - libva-dev
-      - liblua5.2-dev
-    stage-packages:
-      - libavfilter7
-      - liblua5.2-0
+      - libx264-dev
+      - libvorbis-dev
+      - libjpeg-turbo8-dev
+    prime:
+      - usr/lib/*/libmpv*
       
   libadwaita:
     source: https://gitlab.gnome.org/GNOME/libadwaita.git
