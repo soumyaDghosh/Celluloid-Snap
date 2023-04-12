@@ -145,6 +145,7 @@ parts:
       - libnuma-dev
       - libfdk-aac-dev
       - libmp3lame-dev
+      - libcdio-dev
       - libvorbis-dev
     stage-packages:
       - libmp3lame0
