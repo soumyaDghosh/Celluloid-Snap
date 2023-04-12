@@ -101,7 +101,6 @@ parts:
       - --enable-shared
       - --enable-avcodec
       - --enable-libfdk-aac
-      - --enable-libkvazaar
       - --enable-libopenh264
       - --enable-libvpx
       - --enable-opengl
