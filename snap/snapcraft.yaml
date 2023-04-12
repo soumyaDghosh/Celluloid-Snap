@@ -107,7 +107,6 @@ parts:
       - --enable-ffnvcodec
       - --enable-nvdec 
       - --enable-vaapi 
-      - --enable-mediafoundation
       - --enable-libcdio 
       - --enable-libbluray
       - --enable-libass 
