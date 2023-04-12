@@ -121,6 +121,7 @@ parts:
       - --enable-avformat  
       - --enable-swresample
       - --disable-ffplay
+      - --enable-nonfree
       - --disable-devices
       - --enable-gnutls
       - --enable-libmp3lame
