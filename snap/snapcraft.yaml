@@ -104,7 +104,6 @@ parts:
       - --enable-libopenh264
       - --enable-libvpx
       - --enable-opengl
-      - --enable-ffnvcodec
       - --enable-vaapi 
       - --enable-libcdio 
       - --enable-libbluray
