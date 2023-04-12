@@ -143,6 +143,9 @@ parts:
       - libx265-dev 
       - ladspa-sdk-dev
       - libnuma-dev
+      - libcdio-paranoia-dev
+      - libcdio++-dev
+      - libcdio-cdda-dev
       - libfdk-aac-dev
       - libmp3lame-dev
       - libcdio-dev
