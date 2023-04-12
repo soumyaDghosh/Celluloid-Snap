@@ -144,6 +144,7 @@ parts:
       - libx265-dev 
       - ladspa-sdk-dev
       - libnuma-dev
+      - libfdk-aac-dev
       - libmp3lame-dev
       - libvorbis-dev
     stage-packages:
