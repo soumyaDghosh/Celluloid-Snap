@@ -140,6 +140,7 @@ parts:
       - libaom-dev
       - libdav1d-dev
       - libvpx-dev
+      - libbluray-dev
       - libx265-dev 
       - ladspa-sdk-dev
       - libnuma-dev
