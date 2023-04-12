@@ -105,6 +105,7 @@ parts:
       - --enable-libvpx
       - --enable-opengl
       - --enable-ffnvcodec 
+      - --enable-nvdec 
       - --enable-vaapi 
       - --enable-libcdio 
       - --enable-libbluray
@@ -143,6 +144,7 @@ parts:
       - libnuma-dev
       - libcdio-paranoia-dev
       - libcdio++-dev
+      - libffmpeg-nvenc-dev
       - libcdio-cdda-dev
       - libfdk-aac-dev
       - libmp3lame-dev
