@@ -140,6 +140,8 @@ parts:
       - libdav1d-dev
       - libvpx-dev
       - libx265-dev 
+      - ladspa-sdk-dev
+      - ladspa-devel
       - libnuma-dev
       - libmp3lame-dev
       - libvorbis-dev
