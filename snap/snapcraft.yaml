@@ -12,10 +12,6 @@ architectures:
     build-for: amd64
     
 slots:
-  mpris:
-    interface: mpris
-    name: org.mpris.MediaPlayer2.io.github.celluloid_player.Celluloid
-    
   celluloid-snap:
     interface: dbus
     bus: session
@@ -29,6 +25,7 @@ apps:
       TMPDIR: $XDG_RUNTIME_DIR
       LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
     extensions: [gnome]
+    common-id: io.github.celluloid_player.Celluloid 
     plugs:
       - home
       - audio-playback
@@ -40,7 +37,9 @@ apps:
       - hostname-control
       - optical-drive
       - screen-inhibit-control
-   
+    slots:
+      - mpris
+    
 parts:  
   mpv:
     source: https://github.com/mpv-player/mpv.git
@@ -86,27 +85,42 @@ parts:
       - libv4l-0
       - libv4l2rds0
       - libv4lconvert0
-      - libass9
-      - libffmpeg-nvenc-dev
       - libblas3
       - liblapack3
       
   ffmpeg:
-    # WORKAROUND:
-    # Build from source because the ffmpeg package installs libraries as dependencies
-    # that conflict with the Gnome extension
     plugin: autotools
     source: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
     source-checksum: sha256/57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082
     autotools-configure-parameters:
-      # WORKAROUND: Install to /usr instead of /usr/local because it's not in search paths
       - --prefix=/usr
       - --disable-debug
       - --disable-doc
       - --disable-static
       - --enable-gpl
       - --enable-shared
-      - --enable-ffplay
+      - --enable-avcodec
+      - --enable-libfdk-aac
+      - --enable-libkvazaar
+      - --enable-libopenh264
+      - --enable-libvpx
+      - --enable-opengl
+      - --enable-ffnvcodec
+      - --enable-nvdec 
+      - --enable-vaapi 
+      - --enable-mediafoundation
+      - --enable-mediacodec 
+      - --enable-libcdio 
+      - --enable-libbluray
+      - --enable-libass 
+      - --enable-libaom  
+      - --enable-ladspa
+      - --enable-alsa 
+      - --enable-nvenc
+      - --enable-vdpau 
+      - --enable-avformat  
+      - --enable-swresample
+      - --disable-ffplay
       - --disable-devices
       - --enable-gnutls
       - --enable-libmp3lame
@@ -114,6 +128,18 @@ parts:
     build-packages:
       - nasm
       - libgnutls28-dev
+      - libsdl2-dev
+      - libtool
+      - libva-dev
+      - libvdpau-dev
+      - libass-dev
+      - libxcb1-dev
+      - libx264-dev
+      - libopus-dev
+      - libdav1d-dev
+      - libvpx-dev
+      - libx265-dev 
+      - libnuma-dev
       - libmp3lame-dev
       - libvorbis-dev
     stage-packages:
@@ -121,8 +147,7 @@ parts:
     stage:
       - -usr/include  
       
- # Find files provided by the base and platform snap and ensure they aren't
-  # duplicated in this snap
+
   cleanup:
     after: [celluloid-snap, ffmpeg]
     plugin: nil
