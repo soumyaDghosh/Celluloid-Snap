@@ -133,6 +133,7 @@ parts:
       - libva-dev
       - libvdpau-dev
       - libass-dev
+      - libopenh264-dev
       - libxcb1-dev
       - libx264-dev
       - libopus-dev
