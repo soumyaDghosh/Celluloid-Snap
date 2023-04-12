@@ -60,30 +60,9 @@ parts:
     prime:
       - usr/lib/*/libmpv*
       
-  libadwaita:
-    source: https://gitlab.gnome.org/GNOME/libadwaita.git
-    source-tag: '1.3.1'
-    plugin: meson
-    meson-parameters:
-      - --prefix=/usr
-      - -Doptimization=3
-      - -Ddebug=true
-      - -Dintrospection=enabled
-      - -Dvapi=true
-      - -Dtests=false
-      - -Dexamples=false
-    build-packages:
-      - sassc
-    override-pull: |
-      craftctl default
-      sed -e 's/-W\(format-nonliteral\)\b/-Wno-\1/g' -i meson.build
-    prime:
-      - usr/lib/*/*adw*
-      - usr/lib/*/*/Adw*  
-  
   celluloid-snap:
     source: https://github.com/celluloid-player/celluloid.git
-    after: [libadwaita, ffmpeg, mpv]
+    after: [ffmpeg, mpv]
     plugin: meson
     meson-parameters:
       - --prefix=/usr
