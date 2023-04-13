@@ -87,7 +87,16 @@ parts:
       - libv4lconvert0
       - libblas3
       - liblapack3
-      
+  
+  libraries:
+    plugin: nil
+    stage-packages:
+      - libblas3
+      - liblapack3
+    prime:
+      - usr/lib/*/libblas3* 
+      - usr/lib/*/liblapack3*
+  
   ffmpeg:
     plugin: autotools
     source: https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz
