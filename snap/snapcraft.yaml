@@ -85,7 +85,7 @@ parts:
       - libv4l-0
       - libv4l2rds0
       - libv4lconvert0
-      - libblas3
+      - libavcodec-extra58
       - liblapack3
   
   libraries:
