@@ -158,6 +158,7 @@ parts:
       - libvorbis-dev
     stage-packages:
       - libmp3lame0
+      - libass9
     stage:
       - -usr/include  
       
