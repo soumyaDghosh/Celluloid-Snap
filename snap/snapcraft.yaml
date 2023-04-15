@@ -86,15 +86,7 @@ parts:
       - libv4l2rds0
       - libv4lconvert0
       - liblapack3
-  
-  libraries:
-    plugin: nil
-    stage-packages:
       - libblas3
-      - liblapack3
-    prime:
-      - usr/lib/*/libblas3* 
-      - usr/lib/*/liblapack3*
   
   ffmpeg:
     plugin: autotools
@@ -157,10 +149,7 @@ parts:
     stage-packages:
       - libmp3lame0
       - libass9
-    #stage:
-      #- -usr/include  
-      
-
+  
   cleanup:
     after: [celluloid-snap, ffmpeg]
     plugin: nil
