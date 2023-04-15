@@ -157,8 +157,8 @@ parts:
     stage-packages:
       - libmp3lame0
       - libass9
-    stage:
-      - -usr/include  
+    #stage:
+      #- -usr/include  
       
 
   cleanup:
