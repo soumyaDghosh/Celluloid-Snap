@@ -1,15 +1,14 @@
 name: celluloid-snap
 base: core22
-version: 'v0.25'
-summary: Simple GTK+ Frontend to MPV.
-description: |
-  Celluloid (formerly GNOME MPV) is a simple GTK+ frontend for mpv. It aims to be easy to use while maintaining high level of configurability. 
+version: '0.25'
+adopt-info: celluloid-snap
 grade: stable
+icon: gnome-mpv.svg
 confinement: strict
 compression: lzo
 architectures:
   - build-on: amd64
-    build-for: amd64
+  - build-on: arm64
     
 slots:
   celluloid-snap:
@@ -21,10 +20,11 @@ slots:
 apps:
   celluloid-snap:
     command: usr/bin/celluloid
-    environment:
-      TMPDIR: $XDG_RUNTIME_DIR
-      LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
+#    environment:
+#      TMPDIR: $XDG_RUNTIME_DIR
+#      LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
     extensions: [gnome]
+    desktop: [usr/share/applications/io.github.celluloid_player.Celluloid.desktop]
     common-id: io.github.celluloid_player.Celluloid 
     plugs:
       - home
@@ -39,8 +39,8 @@ apps:
       - screen-inhibit-control
     slots:
       - mpris
-    
-parts:  
+
+parts:
   mpv:
     source: https://github.com/mpv-player/mpv.git
     plugin: meson
@@ -58,41 +58,29 @@ parts:
       - libjpeg-turbo8-dev
     prime:
       - usr/lib/*/libmpv*
-  
   celluloid-snap:
     source: https://github.com/celluloid-player/celluloid.git
     after: [mpv]
+    source-tag: v$SNAPCRAFT_PROJECT_VERSION
     plugin: meson
     meson-parameters:
       - --prefix=/usr
     build-packages:
-      - curl
-      - build-essential
-      - libmpv-dev
-      - appstream-util
       - autoconf-archive
       - libepoxy-dev
-      - libgtk-4-dev
-      - pkg-config
-      - python3
       - luajit
-      
-    override-pull: |
-      craftctl default
-      curl -LO https://github.com/celluloid-player/celluloid/releases/download/v0.25/celluloid-0.25.tar.xz
-  #craftctl set version=$(git describe --tags --abbrev=0)
+    stage-snaps:
+      - ffmpeg
     stage-packages:  
       - libv4l-0
       - libv4l2rds0
       - libv4lconvert0
       - liblapack3
       - libblas3
-      - ffmpeg
       - libffmpeg-nvenc-dev
-  
- 
+    parse-info: [usr/share/metainfo/io.github.celluloid_player.Celluloid.appdata.xml]
   cleanup:
-    after: [celluloid-snap]
+    after: [celluloid-snap, mpv]
     plugin: nil
     build-snaps: [core22, gtk-common-themes, gnome-42-2204]
     override-prime: |
