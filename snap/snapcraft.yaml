@@ -24,7 +24,7 @@ apps:
 #      TMPDIR: $XDG_RUNTIME_DIR
 #      LD_LIBRARY_PATH: $SNAP/usr/lib/x86_64-linux-gnu/blas:$SNAP/usr/lib/x86_64-linux-gnu/lapack:$SNAP/usr/lib/x86_64-linux-gnu
     extensions: [gnome]
-    desktop: [usr/share/applications/io.github.celluloid_player.Celluloid.desktop]
+    desktop: usr/share/applications/io.github.celluloid_player.Celluloid.desktop
     common-id: io.github.celluloid_player.Celluloid 
     plugs:
       - home
