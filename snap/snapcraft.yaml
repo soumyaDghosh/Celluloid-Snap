@@ -9,7 +9,7 @@ compression: lzo
 architectures:
   - build-on: amd64
   - build-on: arm64
-    
+  - build-on: armhf
 slots:
   celluloid-snap:
     interface: dbus
