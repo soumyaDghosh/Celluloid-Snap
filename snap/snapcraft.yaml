@@ -3,7 +3,7 @@ base: core22
 version: '0.25'
 adopt-info: celluloid-snap
 grade: stable
-icon: gnome-mpv.svg
+icon: snap/gui/gnome-mpv.svg
 confinement: strict
 compression: lzo
 architectures:
